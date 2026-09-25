@@ -43,19 +43,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 10px;
             margin-bottom: 12px;
         }
 
-        /* ICONES ÉTUDIANT DIPLÔMÉ À 4CM X 4CM EN VERT FONCÉ */
-        .student-icon {
-            width: 4cm;
-            height: 4cm;
+        /* ICONES ET RAMEAUX */
+        .icon-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
             flex-shrink: 0;
         }
 
+        .student-icon {
+            width: 4cm;
+            height: 4cm;
+        }
+
+        .branch-icon {
+            width: 1.8cm;
+            height: 3cm;
+        }
+
+        /* Rameau droit (miroir) */
+        .branch-icon.flip {
+            transform: scaleX(-1);
+        }
+
         .college-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #0a3200;
             text-transform: uppercase;
@@ -179,11 +195,15 @@
                 padding: 20px;
             }
             .college-title {
-                font-size: 18px;
+                font-size: 16px;
             }
             .student-icon {
-                width: 2.5cm;
-                height: 2.5cm;
+                width: 2cm;
+                height: 2cm;
+            }
+            .branch-icon {
+                width: 1cm;
+                height: 1.5cm;
             }
             .contact-info {
                 flex-direction: column;
@@ -199,17 +219,27 @@
         <!-- HEADER -->
         <header>
             <div class="title-wrapper">
-                <!-- SVG GRADUATE STUDENT LEFT (4CM X 4CM) -->
-                <svg class="student-icon" viewBox="0 0 24 24" fill="#0a3200" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L1 7L12 12L21 7.91V14H23V7L12 2ZM12 14.25L6 11.52V14.5C6 16.99 8.69 19 12 19C15.31 19 18 16.99 18 14.5V11.52L12 14.25ZM12 21C8.13 21 5 19.21 5 17V19.5C5 21.43 8.13 23 12 23C15.87 23 19 21.43 19 19.5V17C19 19.21 15.87 21 12 21Z"/>
-                </svg>
+                <!-- GROUPE GAUCHE : RAMEAU + ÉTUDIANT -->
+                <div class="icon-group">
+                    <svg class="branch-icon" viewBox="0 0 24 24" fill="#0a3200" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C12 2 10.5 5 8 7.5C5.5 10 3 11 3 14C3 17 5.5 21 12 22C11 18 10 14 12 11C14 14 13 18 12 22C18.5 21 21 17 21 14C21 11 18.5 10 16 7.5C13.5 5 12 2 12 2Z"/>
+                    </svg>
+                    <svg class="student-icon" viewBox="0 0 24 24" fill="#0a3200" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L1 7L12 12L21 7.91V14H23V7L12 2ZM12 14.25L6 11.52V14.5C6 16.99 8.69 19 12 19C15.31 19 18 16.99 18 14.5V11.52L12 14.25ZM12 21C8.13 21 5 19.21 5 17V19.5C5 21.43 8.13 23 12 23C15.87 23 19 21.43 19 19.5V17C19 19.21 15.87 21 12 21Z"/>
+                    </svg>
+                </div>
 
                 <h1 class="college-title">PI & JU ANGLO-SAXON INTERNATIONAL COLLEGE</h1>
 
-                <!-- SVG GRADUATE STUDENT RIGHT (4CM X 4CM) -->
-                <svg class="student-icon" viewBox="0 0 24 24" fill="#0a3200" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L1 7L12 12L21 7.91V14H23V7L12 2ZM12 14.25L6 11.52V14.5C6 16.99 8.69 19 12 19C15.31 19 18 16.99 18 14.5V11.52L12 14.25ZM12 21C8.13 21 5 19.21 5 17V19.5C5 21.43 8.13 23 12 23C15.87 23 19 21.43 19 19.5V17C19 19.21 15.87 21 12 21Z"/>
-                </svg>
+                <!-- GROUPE DROIT : ÉTUDIANT + RAMEAU -->
+                <div class="icon-group">
+                    <svg class="student-icon" viewBox="0 0 24 24" fill="#0a3200" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L1 7L12 12L21 7.91V14H23V7L12 2ZM12 14.25L6 11.52V14.5C6 16.99 8.69 19 12 19C15.31 19 18 16.99 18 14.5V11.52L12 14.25ZM12 21C8.13 21 5 19.21 5 17V19.5C5 21.43 8.13 23 12 23C15.87 23 19 21.43 19 19.5V17C19 19.21 15.87 21 12 21Z"/>
+                    </svg>
+                    <svg class="branch-icon flip" viewBox="0 0 24 24" fill="#0a3200" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C12 2 10.5 5 8 7.5C5.5 10 3 11 3 14C3 17 5.5 21 12 22C11 18 10 14 12 11C14 14 13 18 12 22C18.5 21 21 17 21 14C21 11 18.5 10 16 7.5C13.5 5 12 2 12 2Z"/>
+                    </svg>
+                </div>
             </div>
             
             <!-- CONTENEUR CENTRALISÉ DES DEVISES -->
