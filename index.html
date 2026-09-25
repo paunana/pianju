@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Texte Pleine Largeur</title>
+  <title>Présentation du Collège</title>
   <style>
     /* Suppression des marges par défaut */
     * {
@@ -13,46 +13,119 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
     }
 
-    /* Section prenant toute la largeur */
-    .full-width-section {
+    /* Section pleine largeur (100% de l'écran) */
+    .hero-section {
       width: 100vw;
-      background-color: #2d5a27; /* Couleur de fond */
-      color: #ffffff;            /* Couleur du texte */
+      max-width: 100%;
+      background: linear-gradient(135deg, #ffffff 0%, #eef5fc 100%);
       padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
     }
 
-    /* Titre dont la taille varie selon la largeur de l'écran */
-    .full-width-title {
+    /* Le SVG prend toute la largeur disponible */
+    .banner-svg {
       width: 100%;
-      font-size: clamp(2rem, 8vw, 6rem); /* Taille dynamique */
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      line-height: 1.1;
-      word-wrap: break-word;
+      height: auto;
+      max-height: 450px;
+      display: block;
     }
 
-    /* Paragraphe sous le titre */
-    .full-width-text {
+    /* Styles typographiques */
+    .college-title {
+      font-size: 28px;
+      font-weight: 800;
+      fill: #1a365d;
+      text-anchor: middle;
+      font-family: 'Georgia', serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .college-subtitle {
+      font-size: 14px;
+      fill: #4a5568;
+      text-anchor: middle;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Bloc de texte sous le logo en pleine largeur */
+    .description-block {
       width: 100%;
-      margin-top: 20px;
-      font-size: clamp(1rem, 2.5vw, 1.8rem);
-      opacity: 0.9;
+      max-width: 1200px;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    .description-block h2 {
+      font-size: 2rem;
+      color: #1a365d;
+      margin-bottom: 15px;
+    }
+
+    .description-block p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #4a5568;
     }
   </style>
 </head>
 <body>
 
-  <section class="full-width-section">
-    <h1 class="full-width-title">VOTRE TITRE PLEINE LARGEUR</h1>
-    <p class="full-width-text">
-      Ajoutez ici votre texte. Grâce au CSS utilisé, ce contenu occupe toute la largeur disponible sur n'importe quel écran.
-    </p>
+  <section class="hero-section">
+    <!-- SVG avec les rameaux et le nom du collège -->
+    <svg class="banner-svg" viewBox="0 0 600 220" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Définition de la branche de rameau -->
+        <g id="branch">
+          <path d="M 0,0 C 40,-25 80,-65 120,-110" stroke="#8DC63F" stroke-width="3.5" fill="none" stroke-linecap="round" />
+          
+          <!-- Feuilles le long de la tige -->
+          <path d="M 15,-12 C 0,-18 -8,-35 12,-35 C 18,-28 15,-15 15,-12 Z" fill="#8DC63F" />
+          <path d="M 15,-12 C 30,-18 38,-35 18,-35 C 12,-28 12,-15 15,-12 Z" fill="#8DC63F" />
+
+          <path d="M 35,-35 C 18,-42 10,-60 30,-60 C 38,-52 35,-38 35,-35 Z" fill="#8DC63F" />
+          <path d="M 35,-35 C 52,-42 60,-60 40,-60 C 32,-52 32,-38 35,-35 Z" fill="#8DC63F" />
+
+          <path d="M 60,-62 C 40,-72 35,-88 55,-85 C 62,-78 60,-65 60,-62 Z" fill="#8DC63F" />
+          <path d="M 60,-62 C 80,-72 85,-88 65,-85 C 58,-78 58,-65 60,-62 Z" fill="#8DC63F" />
+
+          <path d="M 90,-90 C 70,-100 68,-115 85,-112 C 92,-103 90,-92 90,-90 Z" fill="#8DC63F" />
+          <path d="M 90,-90 C 110,-100 112,-115 95,-112 C 88,-103 88,-92 90,-90 Z" fill="#8DC63F" />
+
+          <!-- Feuille de sommet -->
+          <path d="M 118,-108 C 110,-125 125,-132 128,-128 C 130,-120 122,-110 118,-108 Z" fill="#8DC63F" />
+        </g>
+      </defs>
+
+      <g transform="translate(300, 170)">
+        <!-- Branche Droite -->
+        <use href="#branch" />
+        
+        <!-- Branche Gauche (Miroir) -->
+        <use href="#branch" transform="scale(-1, 1)" />
+
+        <!-- ÉCRITS : NOM ET SOUS-TITRE DU COLLÈGE -->
+        <text y="-65" class="college-title">COLLÈGE SAINT-EXUPÉRY</text>
+        <text y="-35" class="college-subtitle">Excellence • Discipline • Réussite</text>
+      </g>
+    </svg>
+
+    <!-- Présentation textuelle sous le visuel -->
+    <div class="description-block">
+      <h2>Bienvenue dans notre établissement</h2>
+      <p>
+        Notre collège offre un cadre d'apprentissage stimulant et bienveillant, favorisant l'épanouissement académique et personnel de chaque élève. À travers un enseignement d'excellence et de nombreuses activités éducatives, nous préparons les citoyens de demain à relever tous les défis.
+      </p>
+    </div>
   </section>
 
 </body>
