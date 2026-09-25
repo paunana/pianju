@@ -3,10 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Web</title>
+    <title>En-tête - Pi & Ju Anglo-Saxon International College</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 800px;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .college-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a2a3a;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .motto-primary {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .motto-secondary {
+            font-size: 14px;
+            font-style: italic;
+            color: #555555;
+            margin-bottom: 18px;
+        }
+
+        .divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #ffffff, #1a2a3a, #ffffff);
+            margin: 15px 0;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 13px;
+            color: #444444;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-item a {
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .college-title {
+                font-size: 18px;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenue sur mon site !</h1>
-    <p>Mon site est en cours de construction.</p>
+
+    <header class="header-container">
+        <h1 class="college-title">PI & JU ANGLO-SAXON INTERNATIONAL COLLEGE</h1>
+        
+        <p class="motto-primary">Discipline • Hardwork • Progress</p>
+        <p class="motto-secondary">College Of Astuteness</p>
+        
+        <hr class="divider">
+        
+        <div class="contact-info">
+            <span class="contact-item">
+                📧 <a href="mailto:contact@piandjucollege.org">contact@piandjucollege.org</a>
+            </span>
+            <span class="contact-item">
+                📞 <a href="tel:+237677702716">+237 6 77 70 27 16</a>
+            </span>
+            <span class="contact-item">
+                📍 Mbiteng / Yaoundé, Cameroun
+            </span>
+        </div>
+    </header>
+
 </body>
 </html>
