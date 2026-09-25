@@ -1,305 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PI & JU Anglo-Saxon International College</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Georgia', 'Times New Roman', serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texte Pleine Largeur</title>
+  <style>
+    /* Suppression des marges par défaut */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background-color: #f0f4f0;
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
 
-        .page-container {
-            width: 100%;
-            max-width: 850px;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-top: 6px solid #0a3200;
-        }
+    /* Section prenant toute la largeur */
+    .full-width-section {
+      width: 100vw;
+      background-color: #2d5a27; /* Couleur de fond */
+      color: #ffffff;            /* Couleur du texte */
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-        /* HEADER STYLES */
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            background: #f2f7f2;
-            padding: 25px;
-            border: 2px solid #14450a;
-            border-radius: 6px;
-        }
+    /* Titre dont la taille varie selon la largeur de l'écran */
+    .full-width-title {
+      width: 100%;
+      font-size: clamp(2rem, 8vw, 6rem); /* Taille dynamique */
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.1;
+      word-wrap: break-word;
+    }
 
-        .title-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        /* ICONES ET RAMEAUX */
-        .icon-group {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            flex-shrink: 0;
-        }
-
-        .student-icon {
-            width: 4cm;
-            height: 4cm;
-        }
-
-        .branch-icon {
-            width: 1.8cm;
-            height: 3cm;
-        }
-
-        /* Rameau droit (miroir) */
-        .branch-icon.flip {
-            transform: scaleX(-1);
-        }
-
-        .college-title {
-            font-size: 22px;
-            font-weight: bold;
-            color: #0a3200;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-align: center;
-        }
-
-        /* BLOC CENTRALISÉ DES DEVISES */
-        .motto-container {
-            text-align: center;
-            width: 100%;
-            margin: 10px auto 18px auto;
-        }
-
-        .motto-primary {
-            font-size: 16px;
-            font-weight: 600;
-            color: #14450a;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 6px;
-            text-align: center;
-        }
-
-        .motto-secondary {
-            font-size: 15px;
-            font-style: italic;
-            color: #1e5912;
-            text-align: center;
-        }
-
-        .divider {
-            border: none;
-            height: 2px;
-            background: linear-gradient(to right, #ffffff, #14450a, #ffffff);
-            margin: 15px 0 20px 0;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 13px;
-            color: #0a3200;
-            font-family: 'Arial', sans-serif;
-            font-weight: 500;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .contact-item a {
-            color: #0a3200;
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-            color: #1e5912;
-        }
-
-        /* CONTENT STYLES */
-        .content {
-            margin-top: 30px;
-            line-height: 1.6;
-        }
-
-        section {
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            font-size: 18px;
-            color: #0a3200;
-            border-bottom: 2px solid #14450a;
-            padding-bottom: 6px;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        p {
-            font-size: 14px;
-            color: #2b2b2b;
-            margin-bottom: 12px;
-            text-align: justify;
-            font-family: 'Arial', sans-serif;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-            font-family: 'Arial', sans-serif;
-        }
-
-        ul li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: #2b2b2b;
-        }
-
-        ul li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #14450a;
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 14px;
-        }
-
-        @media (max-width: 600px) {
-            .page-container {
-                padding: 20px;
-            }
-            .college-title {
-                font-size: 16px;
-            }
-            .student-icon {
-                width: 2cm;
-                height: 2cm;
-            }
-            .branch-icon {
-                width: 1cm;
-                height: 1.5cm;
-            }
-            .contact-info {
-                flex-direction: column;
-                gap: 8px;
-            }
-        }
-    </style>
+    /* Paragraphe sous le titre */
+    .full-width-text {
+      width: 100%;
+      margin-top: 20px;
+      font-size: clamp(1rem, 2.5vw, 1.8rem);
+      opacity: 0.9;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="page-container">
-        
-        <!-- HEADER -->
-        <header>
-            <div class="title-wrapper">
-                <!-- GROUPE GAUCHE : RAMEAU + ÉTUDIANT -->
-                <div class="icon-group">
-                    <svg class="branch-icon" viewBox="0 0 24 24" fill="#0a3200" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C12 2 10.5 5 8 7.5C5.5 10 3 11 3 14C3 17 5.5 21 12 22C11 18 10 14 12 11C14 14 13 18 12 22C18.5 21 21 17 21 14C21 11 18.5 10 16 7.5C13.5 5 12 2 12 2Z"/>
-                    </svg>
-                    <svg class="student-icon" viewBox="0 0 24 24" fill="#0a3200" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L1 7L12 12L21 7.91V14H23V7L12 2ZM12 14.25L6 11.52V14.5C6 16.99 8.69 19 12 19C15.31 19 18 16.99 18 14.5V11.52L12 14.25ZM12 21C8.13 21 5 19.21 5 17V19.5C5 21.43 8.13 23 12 23C15.87 23 19 21.43 19 19.5V17C19 19.21 15.87 21 12 21Z"/>
-                    </svg>
-                </div>
-
-                <h1 class="college-title">PI & JU ANGLO-SAXON INTERNATIONAL COLLEGE</h1>
-
-                <!-- GROUPE DROIT : ÉTUDIANT + RAMEAU -->
-                <div class="icon-group">
-                    <svg class="student-icon" viewBox="0 0 24 24" fill="#0a3200" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L1 7L12 12L21 7.91V14H23V7L12 2ZM12 14.25L6 11.52V14.5C6 16.99 8.69 19 12 19C15.31 19 18 16.99 18 14.5V11.52L12 14.25ZM12 21C8.13 21 5 19.21 5 17V19.5C5 21.43 8.13 23 12 23C15.87 23 19 21.43 19 19.5V17C19 19.21 15.87 21 12 21Z"/>
-                    </svg>
-                    <svg class="branch-icon flip" viewBox="0 0 24 24" fill="#0a3200" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C12 2 10.5 5 8 7.5C5.5 10 3 11 3 14C3 17 5.5 21 12 22C11 18 10 14 12 11C14 14 13 18 12 22C18.5 21 21 17 21 14C21 11 18.5 10 16 7.5C13.5 5 12 2 12 2Z"/>
-                    </svg>
-                </div>
-            </div>
-            
-            <!-- CONTENEUR CENTRALISÉ DES DEVISES -->
-            <div class="motto-container">
-                <p class="motto-primary">Discipline • Hardwork • Progress</p>
-                <p class="motto-secondary">College Of Astuteness</p>
-            </div>
-            
-            <hr class="divider">
-            
-            <div class="contact-info">
-                <span class="contact-item">
-                    📧 <a href="mailto:contact@piandjucollege.org">contact@piandjucollege.org</a>
-                </span>
-                <span class="contact-item">
-                    📞 <a href="tel:+237677702716">+237 6 77 70 27 16</a>
-                </span>
-                <span class="contact-item">
-                    📍 Mbiteng / Yaoundé, Cameroun
-                </span>
-            </div>
-        </header>
-
-        <!-- MAIN CONTENT -->
-        <main class="content">
-
-            <!-- OVERVIEW -->
-            <section>
-                <h2>Overview</h2>
-                <p>
-                    <strong>PI & JU Anglo-Saxon International College</strong> is a strictly Anglo-Saxon private secondary institution equipped with full boarding facilities, committed to academic excellence, moral integrity, and leadership development. Located in Mbiteng, Yaoundé (Cameroon), the college provides an authentic, high-standard English-educational environment.
-                </p>
-            </section>
-
-            <!-- CURRICULUM -->
-            <section>
-                <h2>Pure Anglo-Saxon Curriculum</h2>
-                <p>Our academic framework is 100% modeled on the traditional Anglo-Saxon education system:</p>
-                <ul>
-                    <li><strong>Academic Cycles:</strong> Lower Secondary (Form 1 to Form 5) & High School (Lower Sixth and Upper Sixth).</li>
-                    <li><strong>Official Examinations:</strong> Comprehensive preparation for the <strong>GCE Ordinary Level (O-Level)</strong> and <strong>GCE Advanced Level (A-Level)</strong> examinations.</li>
-                    <li><strong>Language of Instruction:</strong> Strictly <strong>English</strong> across all subjects, school operations, and activities.</li>
-                </ul>
-            </section>
-
-            <!-- BOARDING FACILITIES -->
-            <section>
-                <h2>Boarding Facilities</h2>
-                <p>Our boarding school offers safe, comfortable, and separate residential halls for boys and girls:</p>
-                <ul>
-                    <li><strong>24/7 Supervision:</strong> Dedicated housemasters, housemistresses, and academic tutors providing continuous care and guidance.</li>
-                    <li><strong>Supervised Prep Sessions:</strong> Daily compulsory evening study hours to guarantee consistent academic performance.</li>
-                    <li><strong>Balanced Dining:</strong> Nutritious meals served daily in a hygienic environment.</li>
-                    <li><strong>Secure Campus:</strong> Fully fenced, monitored campus with basic medical assistance on site.</li>
-                </ul>
-            </section>
-
-        </main>
-
-    </div>
+  <section class="full-width-section">
+    <h1 class="full-width-title">VOTRE TITRE PLEINE LARGEUR</h1>
+    <p class="full-width-text">
+      Ajoutez ici votre texte. Grâce au CSS utilisé, ce contenu occupe toute la largeur disponible sur n'importe quel écran.
+    </p>
+  </section>
 
 </body>
 </html>
