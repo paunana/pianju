@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>En-tête - Pi & Ju Anglo-Saxon International College</title>
+    <title>PI & JU Anglo-Saxon International College</title>
     <style>
         * {
             margin: 0;
@@ -19,14 +19,19 @@
             padding: 40px 20px;
         }
 
-        .header-container {
+        .page-container {
             width: 100%;
-            max-width: 800px;
+            max-width: 850px;
             background: #ffffff;
-            padding: 30px 40px;
+            padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* HEADER STYLES */
+        header {
             text-align: center;
+            margin-bottom: 30px;
         }
 
         .college-title {
@@ -58,7 +63,7 @@
             border: none;
             height: 2px;
             background: linear-gradient(to right, #ffffff, #1a2a3a, #ffffff);
-            margin: 15px 0;
+            margin: 15px 0 20px 0;
         }
 
         .contact-info {
@@ -87,7 +92,62 @@
             text-decoration: underline;
         }
 
+        /* CONTENT STYLES */
+        .content {
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #1a2a3a;
+            border-bottom: 2px solid #1a2a3a;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #333333;
+            margin-bottom: 12px;
+            text-align: justify;
+            font-family: 'Arial', sans-serif;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1a2a3a;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 14px;
+        }
+
         @media (max-width: 600px) {
+            .page-container {
+                padding: 20px;
+            }
             .college-title {
                 font-size: 18px;
             }
@@ -100,26 +160,67 @@
 </head>
 <body>
 
-    <header class="header-container">
-        <h1 class="college-title">PI & JU ANGLO-SAXON INTERNATIONAL COLLEGE</h1>
+    <div class="page-container">
         
-        <p class="motto-primary">Discipline • Hardwork • Progress</p>
-        <p class="motto-secondary">College Of Astuteness</p>
-        
-        <hr class="divider">
-        
-        <div class="contact-info">
-            <span class="contact-item">
-                📧 <a href="mailto:contact@piandjucollege.org">contact@piandjucollege.org</a>
-            </span>
-            <span class="contact-item">
-                📞 <a href="tel:+237677702716">+237 6 77 70 27 16</a>
-            </span>
-            <span class="contact-item">
-                📍 Mbiteng / Yaoundé, Cameroun
-            </span>
-        </div>
-    </header>
+        <!-- HEADER -->
+        <header>
+            <h1 class="college-title">PI & JU ANGLO-SAXON INTERNATIONAL COLLEGE</h1>
+            
+            <p class="motto-primary">Discipline • Hardwork • Progress</p>
+            <p class="motto-secondary">College Of Astuteness</p>
+            
+            <hr class="divider">
+            
+            <div class="contact-info">
+                <span class="contact-item">
+                    📧 <a href="mailto:contact@piandjucollege.org">contact@piandjucollege.org</a>
+                </span>
+                <span class="contact-item">
+                    📞 <a href="tel:+237677702716">+237 6 77 70 27 16</a>
+                </span>
+                <span class="contact-item">
+                    📍 Mbiteng / Yaoundé, Cameroun
+                </span>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <!-- OVERVIEW -->
+            <section>
+                <h2>Overview</h2>
+                <p>
+                    <strong>PI & JU Anglo-Saxon International College</strong> is a strictly Anglo-Saxon private secondary institution equipped with full boarding facilities, committed to academic excellence, moral integrity, and leadership development. Located in Mbiteng, Yaoundé (Cameroon), the college provides an authentic, high-standard English-educational environment.
+                </p>
+            </section>
+
+            <!-- CURRICULUM -->
+            <section>
+                <h2>Pure Anglo-Saxon Curriculum</h2>
+                <p>Our academic framework is 100% modeled on the traditional Anglo-Saxon education system:</p>
+                <ul>
+                    <li><strong>Academic Cycles:</strong> Lower Secondary (Form 1 to Form 5) & High School (Lower Sixth and Upper Sixth).</li>
+                    <li><strong>Official Examinations:</strong> Comprehensive preparation for the <strong>GCE Ordinary Level (O-Level)</strong> and <strong>GCE Advanced Level (A-Level)</strong> examinations.</li>
+                    <li><strong>Language of Instruction:</strong> Strictly <strong>English</strong> across all subjects, school operations, and activities.</li>
+                </ul>
+            </section>
+
+            <!-- BOARDING FACILITIES -->
+            <section>
+                <h2>Boarding Facilities</h2>
+                <p>Our boarding school offers safe, comfortable, and separate residential halls for boys and girls:</p>
+                <ul>
+                    <li><strong>24/7 Supervision:</strong> Dedicated housemasters, housemistresses, and academic tutors providing continuous care and guidance.</li>
+                    <li><strong>Supervised Prep Sessions:</strong> Daily compulsory evening study hours to guarantee consistent academic performance.</li>
+                    <li><strong>Balanced Dining:</strong> Nutritious meals served daily in a hygienic environment.</li>
+                    <li><strong>Secure Campus:</strong> Fully fenced, monitored campus with basic medical assistance on site.</li>
+                </ul>
+            </section>
+
+        </main>
+
+    </div>
 
 </body>
 </html>
