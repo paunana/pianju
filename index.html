@@ -22,7 +22,7 @@
 
         .page-container {
             width: 100%;
-            max-width: 850px;
+            max-width: 900px;
             background: #ffffff;
             padding: 40px;
             border-radius: 8px;
@@ -30,15 +30,13 @@
             border-top: 6px solid #1b4324;
         }
 
-        /* HEADER AVEC ARRIÈRE-PLAN IMAGE */
+        /* HEADER */
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             padding: 35px 25px;
             border: 2px solid #1b4324;
             border-radius: 6px;
-            
-            /* Image de fond avec voilage pour garder le texte lisible */
             background-image: linear-gradient(rgba(240, 247, 241, 0.85), rgba(240, 247, 241, 0.85)), url('Seance%20de%20cours.png');
             background-size: cover;
             background-position: center;
@@ -53,10 +51,9 @@
             margin-bottom: 12px;
         }
 
-        /* GRADUATION CAP ICONS (4CM X 4CM) */
         .grad-cap-icon {
-            width: 4cm;
-            height: 4cm;
+            width: 3cm;
+            height: 3cm;
             flex-shrink: 0;
             fill: #1b4324;
         }
@@ -70,7 +67,6 @@
             text-align: center;
         }
 
-        /* CENTRALIZED MOTTO CONTAINER */
         .motto-container {
             text-align: center;
             width: 100%;
@@ -84,69 +80,118 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 6px;
-            text-align: center;
         }
 
         .motto-secondary {
             font-size: 15px;
             font-style: italic;
             color: #2e693b;
-            text-align: center;
         }
 
-        .divider {
-            border: none;
-            height: 2px;
-            background: linear-gradient(to right, rgba(27, 67, 36, 0.1), #1b4324, rgba(27, 67, 36, 0.1));
-            margin: 15px 0 20px 0;
+        /* BARRE DE NAVIGATION PRINCIPALE */
+        nav {
+            background-color: #1b4324;
+            border-radius: 6px;
+            margin-bottom: 25px;
         }
 
-        .contact-info {
+        .nav-menu {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            list-style: none;
+            justify-content: space-around;
             flex-wrap: wrap;
-            gap: 20px;
-            font-size: 13px;
-            color: #1b4324;
-            font-family: 'Arial', sans-serif;
-            font-weight: 500;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        .nav-item {
+            position: relative;
         }
 
-        .contact-item a {
-            color: #1b4324;
+        .nav-link {
+            display: block;
+            padding: 14px 20px;
+            color: #ffffff;
             text-decoration: none;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
         }
 
-        .contact-item a:hover {
-            text-decoration: underline;
-            color: #2e693b;
+        .nav-link:hover, .nav-item.active > .nav-link {
+            background-color: #2e693b;
         }
 
-        /* CONTENT STYLES */
-        .content {
-            margin-top: 30px;
-            line-height: 1.6;
+        /* CONTENU DES ONGLETS PRINCIPAUX */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
         }
 
-        section {
-            margin-bottom: 30px;
+        .tab-content.active {
+            display: block;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* SOUS-ONGLETS ET BOUTONS DE NAVIGATION */
+        .sub-nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #eaf2eb;
+            padding-bottom: 10px;
+        }
+
+        .sub-btn {
+            background: #f0f7f1;
+            border: 1px solid #1b4324;
+            color: #1b4324;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .sub-btn:hover, .sub-btn.active {
+            background: #1b4324;
+            color: #ffffff;
+        }
+
+        .sub-tab-content {
+            display: none;
+            padding: 15px;
+            background: #fafdfa;
+            border: 1px solid #eaf2eb;
+            border-radius: 6px;
+        }
+
+        .sub-tab-content.active {
+            display: block;
+        }
+
+        /* TYPOGRAPHIE ET LISTES */
         h2 {
             font-size: 18px;
             color: #1b4324;
             border-bottom: 2px solid #1b4324;
             padding-bottom: 6px;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 16px;
+            color: #2e693b;
+            margin: 15px 0 8px 0;
         }
 
         p {
@@ -155,12 +200,14 @@
             margin-bottom: 12px;
             text-align: justify;
             font-family: 'Arial', sans-serif;
+            line-height: 1.5;
         }
 
         ul {
             list-style: none;
             padding-left: 0;
             font-family: 'Arial', sans-serif;
+            margin-bottom: 15px;
         }
 
         ul li {
@@ -178,129 +225,234 @@
             color: #1b4324;
             font-weight: bold;
             font-size: 18px;
-            line-height: 14px;
+        }
+
+        /* CARD CONTACT & WHATSAPP */
+        .contact-card {
+            background: #f0f7f1;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #1b4324;
+            margin-top: 15px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            margin: 8px 8px 8px 0;
+            transition: background 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        .email-link {
+            color: #1b4324;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
-            .page-container {
-                padding: 20px;
-            }
-
-            .college-title {
-                font-size: 16px;
-            }
-
-            .grad-cap-icon {
-                width: 2.5cm;
-                height: 2.5cm;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 8px;
-            }
+            .page-container { padding: 15px; }
+            .college-title { font-size: 16px; }
+            .grad-cap-icon { width: 2cm; height: 2cm; }
+            .nav-menu { flex-direction: column; text-align: center; }
+            .sub-nav { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
     <div class="page-container">
-        <!-- HEADER AVEC FOND D'ÉCRAN -->
+        <!-- HEADER -->
         <header>
             <div class="title-wrapper">
-                <!-- GRADUATION CAP ICON LEFT (4CM X 4CM) -->
-                <svg class="grad-cap-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3ZM5 13.18V17.18C5 19.4 8.13 21 12 21C15.87 21 19 19.4 19 17.18V13.18L12 17L5 13.18Z"/>
-                </svg>
+                <svg class="grad-cap-icon" viewBox="0 0 24 24"><path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3ZM5 13.18V17.18C5 19.4 8.13 21 12 21C15.87 21 19 19.4 19 17.18V13.18L12 17L5 13.18Z"/></svg>
                 <h1 class="college-title">PI & JU ANGLO-SAXON INTERNATIONAL COLLEGE</h1>
-                <!-- GRADUATION CAP ICON RIGHT (4CM X 4CM) -->
-                <svg class="grad-cap-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3ZM5 13.18V17.18C5 19.4 8.13 21 12 21C15.87 21 19 19.4 19 17.18V13.18L12 17L5 13.18Z"/>
-                </svg>
+                <svg class="grad-cap-icon" viewBox="0 0 24 24"><path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3ZM5 13.18V17.18C5 19.4 8.13 21 12 21C15.87 21 19 19.4 19 17.18V13.18L12 17L5 13.18Z"/></svg>
             </div>
-
-            <!-- CENTRALIZED MOTTO CONTAINER -->
             <div class="motto-container">
                 <p class="motto-primary">Discipline • Hardwork • Progress</p>
                 <p class="motto-secondary">College Of Astuteness</p>
             </div>
-
-            <hr class="divider">
-
-            <div class="contact-info">
-                <span class="contact-item">
-                    📧 <a href="mailto:contact@piandjucollege.org">contact@piandjucollege.org</a>
-                </span>
-                <span class="contact-item">
-                    📞 <a href="tel:+237677181569">+237 6 77 18 15 69</a> / <a href="tel:+237620514405">+237 6 20 51 44 05</a>
-                </span>
-                <span class="contact-item">
-                    📍 Mbiteng / Yaoundé, Cameroon
-                </span>
-            </div>
         </header>
 
-        <!-- MAIN CONTENT -->
-        <main class="content">
-            <!-- WELCOME SECTION -->
+        <!-- MENU DE NAVIGATION PRINCIPAL -->
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item active"><a class="nav-link" onclick="openTab('home', this)">Home</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="openTab('education', this)">Education</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="openTab('contact', this)">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- ONGLET : HOME -->
+        <main id="home" class="tab-content active">
             <section>
                 <h2>Welcome to Our Institution</h2>
-                <p>
-                    Our college offers a stimulating and nurturing learning environment that fosters the academic and personal growth of every student. Through educational excellence and a wide array of learning activities, we prepare tomorrow’s citizens to successfully meet every challenge.
-                </p>
+                <p>Our college offers a stimulating and nurturing learning environment that fosters the academic and personal growth of every student. Through educational excellence and a wide array of learning activities, we prepare tomorrow’s citizens to successfully meet every challenge.</p>
             </section>
 
-            <!-- OVERVIEW -->
             <section>
                 <h2>Overview</h2>
-                <p>
-                    <strong>PI & JU Anglo-Saxon International College</strong> is a strictly Anglo-Saxon private secondary institution equipped with full boarding facilities, committed to academic excellence, moral integrity, and leadership development. Located in Mbiteng, Yaoundé (Cameroon), the college provides an authentic, high-standard English-educational environment.
-                </p>
-            </section>
-
-            <!-- PURE ANGLO-SAXON CURRICULUM -->
-            <section>
-                <h2>Pure Anglo-Saxon Curriculum</h2>
-                <p>Our academic framework is 100% modeled on the traditional Anglo-Saxon education system:</p>
-                <ul>
-                    <li><strong>Academic Cycles:</strong> Lower Secondary (Form 1 to Form 5) & High School (Lower Sixth and Upper Sixth).</li>
-                    <li><strong>Official Examinations:</strong> Comprehensive preparation for the <strong>GCE Ordinary Level (O-Level)</strong> and <strong>GCE Advanced Level (A-Level)</strong> examinations.</li>
-                    <li><strong>Language of Instruction:</strong> Strictly <strong>English</strong> across all subjects, school operations, and daily activities.</li>
-                </ul>
-            </section>
-
-            <!-- BOARDING FACILITIES -->
-            <section>
-                <h2>Boarding Facilities</h2>
-                <p>Our boarding facilities offer a safe, structured, and comfortable home-away-from-home environment with separate residential halls for boys and girls:</p>
-                <ul>
-                    <li><strong>24/7 Pastoral Supervision:</strong> Dedicated housemasters, housemistresses, and resident academic tutors ensuring student welfare and discipline.</li>
-                    <li><strong>Supervised Evening Prep:</strong> Mandatory daily study hours designed to cultivate academic diligence and consistent performance.</li>
-                    <li><strong>Nutritious Dining:</strong> Balanced, healthy meals prepared in a highly hygienic environment.</li>
-                    <li><strong>Secure Campus Environment:</strong> A fully fenced, guarded campus with continuous monitoring and basic medical care facilities on site.</li>
-                </ul>
-            </section>
-
-            <!-- SCHOOL TRANSPORT SERVICES -->
-            <section>
-                <h2>School Transport Services</h2>
-                <p>To ensure student safety, punctuality, and convenience for day-students, the college provides reliable school bus transportation services:</p>
-                <ul>
-                    <li><strong>Safe & Comfortable Buses:</strong> Well-maintained vehicles driven by experienced, vetted drivers.</li>
-                    <li><strong>Dedicated Routes:</strong> Coverage across key neighborhoods and strategic pickup points in Yaoundé.</li>
-                    <li><strong>Supervised Commutes:</strong> Bus attendants present on board to ensure student discipline and safety throughout the journey.</li>
-                </ul>
-            </section>
-
-            <!-- CORE VALUES & ADMISSION -->
-            <section>
-                <h2>Core Values & Admission</h2>
-                <p>
-                    Rooted in our motto <em>"Discipline • Hardwork • Progress"</em>, we nurture astuteness and moral integrity in every student, preparing them to excel in higher education globally.
-                </p>
+                <p><strong>PI & JU Anglo-Saxon International College</strong> is a strictly Anglo-Saxon private secondary institution equipped with full boarding facilities, committed to academic excellence, moral integrity, and leadership development. Located in Mbiteng, Yaoundé (Cameroon), the college provides an authentic, high-standard English-educational environment.</p>
             </section>
         </main>
+
+        <!-- ONGLET : EDUCATION -->
+        <main id="education" class="tab-content">
+            <h2>Education</h2>
+            
+            <!-- SOUS-ONGLETS EDUCATION -->
+            <div class="sub-nav">
+                <button class="sub-btn active" onclick="openSubTab('study', this)">Study at PI & JU College</button>
+                <button class="sub-btn" onclick="openSubTab('student-life', this)">Student Life</button>
+            </div>
+
+            <!-- 1. STUDY AT PI & JU COLLEGE -->
+            <div id="study" class="sub-tab-content active">
+                <h3>Anglo-Saxon Curriculum & Courses Dispensed</h3>
+                <p>Our college delivers a pure Anglo-Saxon academic curriculum designed to prepare students for official GCE Ordinary Level (O-Level) and Advanced Level (A-Level) examinations.</p>
+                
+                <h3>Lower Secondary (Form 1 to Form 5)</h3>
+                <p>Comprehensive foundation courses across general subjects:</p>
+                <ul>
+                    <li><strong>Languages:</strong> English Language, English Literature, French.</li>
+                    <li><strong>Sciences & ICT:</strong> Mathematics, Physics, Chemistry, Biology, Computer Science.</li>
+                    <li><strong>Humanities & Commercials:</strong> History, Geography, Economics, Citizenship Education, Commerce, Principles of Accounts.</li>
+                </ul>
+
+                <h3>High School (Lower Sixth & Upper Sixth)</h3>
+                <p>Specialized fields tailored for university entrance and academic excellence:</p>
+                <ul>
+                    <li><strong>Science Stream:</strong> Pure Mathematics, Further Mathematics, Physics, Chemistry, Biology, Computer Science.</li>
+                    <li><strong>Arts Stream:</strong> Literature in English, History, Geography, Economics, Philosophy, Religious Studies.</li>
+                </ul>
+            </div>
+
+            <!-- 2. STUDENT LIFE -->
+            <div id="student-life" class="sub-tab-content">
+                <h3>Student Life Services</h3>
+                <p>Select a category below to explore student services and campus life:</p>
+
+                <!-- BOUTONS STUDENT LIFE -->
+                <div class="sub-nav">
+                    <button class="sub-btn active" onclick="openStudentTab('grants', this)">Grants and financial assistance</button>
+                    <button class="sub-btn" onclick="openStudentTab('sports', this)">Sports and Cultural Activities</button>
+                    <button class="sub-btn" onclick="openStudentTab('associations', this)">Student associations</button>
+                    <button class="sub-btn" onclick="openStudentTab('workspaces', this)">Work Spaces</button>
+                    <button class="sub-btn" onclick="openStudentTab('cafeteria', this)">Cafeteria and Food Service</button>
+                    <button class="sub-btn" onclick="openStudentTab('housing', this)">Housing</button>
+                </div>
+
+                <!-- CONTENUS CLIQUABLES STUDENT LIFE -->
+                <div id="grants" class="student-sub-tab active">
+                    <h3>Grants and financial assistance</h3>
+                    <p>Financial assistance programs and academic excellence grants are available to support deserving students throughout their academic journey.</p>
+                </div>
+
+                <div id="sports" class="student-sub-tab" style="display:none;">
+                    <h3>Sports and Cultural Activities</h3>
+                    <p>Extracurricular programs including inter-school tournaments (football, basketball, volleyball) alongside drama, music, and debate clubs.</p>
+                </div>
+
+                <div id="associations" class="student-sub-tab" style="display:none;">
+                    <h3>Student associations</h3>
+                    <p>Active student leadership programs, Student Council, Environmental Club, Red Cross Society, and Young Christian Association.</p>
+                </div>
+
+                <div id="workspaces" class="student-sub-tab" style="display:none;">
+                    <h3>Work Spaces</h3>
+                    <p>Modern quiet study halls, high-speed internet computer laboratories, and a rich library designed for research and daily prep.</p>
+                </div>
+
+                <div id="cafeteria" class="student-sub-tab" style="display:none;">
+                    <h3>Cafeteria and Food Service</h3>
+                    <p>Hygienic dining facilities offering healthy, balanced, and nutritious meals for both resident boarders and day-students.</p>
+                </div>
+
+                <div id="housing" class="student-sub-tab" style="display:none;">
+                    <h3>Housing</h3>
+                    <p>Secure and comfortable separate boarding dormitories for boys and girls, supervised 24/7 by dedicated resident housemasters.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- ONGLET : CONTACT -->
+        <main id="contact" class="tab-content">
+            <h2>Contact Us</h2>
+            <p>Reach out directly to our administrative office. Click on the buttons below to start an instant conversation on WhatsApp or send an email.</p>
+
+            <div class="contact-card">
+                <h3>Email Address</h3>
+                <p>✉️ <a class="email-link" href="mailto:contact@piandjucollege.org">contact@piandjucollege.org</a></p>
+                
+                <h3 style="margin-top: 15px;">Direct WhatsApp Contacts</h3>
+                <p>Click below to open a chat directly:</p>
+                
+                <a href="https://wa.me/237677181569" target="_blank" class="whatsapp-btn">
+                    💬 Chat WhatsApp: +237 6 77 18 15 69
+                </a>
+                
+                <a href="https://wa.me/237620514405" target="_blank" class="whatsapp-btn">
+                    💬 Chat WhatsApp: +237 6 20 51 44 05
+                </a>
+
+                <h3 style="margin-top: 15px;">Location</h3>
+                <p>📍 Mbiteng / Yaoundé, Cameroon</p>
+            </div>
+        </main>
     </div>
+
+    <!-- SCRIPT JAVASCRIPT DE NAVIGATION -->
+    <script>
+        function openTab(tabId, element) {
+            let contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            let items = document.querySelectorAll('.nav-item');
+            items.forEach(item => item.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            element.parentElement.classList.add('active');
+        }
+
+        function openSubTab(subTabId, element) {
+            let subContents = document.querySelectorAll('#education .sub-tab-content');
+            subContents.forEach(content => content.classList.remove('active'));
+
+            let subBtns = document.querySelectorAll('#education .sub-nav .sub-btn');
+            subBtns.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(subTabId).classList.add('active');
+            element.classList.add('active');
+        }
+
+        function openStudentTab(studentTabId, element) {
+            let studentTabs = document.querySelectorAll('.student-sub-tab');
+            studentTabs.forEach(tab => tab.style.display = 'none');
+
+            let studentBtns = document.querySelectorAll('#student-life .sub-btn');
+            studentBtns.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(studentTabId).style.display = 'block';
+            element.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
