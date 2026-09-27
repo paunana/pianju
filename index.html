@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Donner le code complet<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,446 +30,181 @@
             border-top: 6px solid #1b4324;
         }
 
-        /* HEADER */
         header {
             text-align: center;
-            margin-bottom: 20px;
-            padding: 35px 25px;
-            border: 2px solid #1b4324;
-            border-radius: 6px;
-            background-image: linear-gradient(rgba(240, 247, 241, 0.85), rgba(240, 247, 241, 0.85)), url('Seance%20de%20cours.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .title-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 12px;
-        }
-
-        .grad-cap-icon {
-            width: 3cm;
-            height: 3cm;
-            flex-shrink: 0;
-            fill: #1b4324;
-        }
-
-        .college-title {
-            font-size: 22px;
-            font-weight: bold;
-            color: #1b4324;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-align: center;
-        }
-
-        .motto-container {
-            text-align: center;
-            width: 100%;
-            margin: 10px auto 18px auto;
-        }
-
-        .motto-primary {
-            font-size: 16px;
-            font-weight: 600;
-            color: #23542e;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 6px;
-        }
-
-        .motto-secondary {
-            font-size: 15px;
-            font-style: italic;
-            color: #2e693b;
-        }
-
-        /* BARRE DE NAVIGATION PRINCIPALE */
-        nav {
-            background-color: #1b4324;
-            border-radius: 6px;
-            margin-bottom: 25px;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .nav-link {
-            display: block;
-            padding: 14px 20px;
-            color: #ffffff;
-            text-decoration: none;
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .nav-link:hover, .nav-item.active > .nav-link {
-            background-color: #2e693b;
-        }
-
-        /* CONTENU DES ONGLETS PRINCIPAUX */
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* SOUS-ONGLETS ET BOUTONS DE NAVIGATION */
-        .sub-nav {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
             border-bottom: 2px solid #eaf2eb;
-            padding-bottom: 10px;
-            justify-content: center;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
 
-        .sub-btn {
-            background: #f0f7f1;
-            border: 1px solid #1b4324;
+        header h1 {
+            font-size: 28px;
             color: #1b4324;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Arial', sans-serif;
-            font-size: 13px;
-            font-weight: bold;
-            transition: all 0.2s;
-        }
-
-        .sub-btn:hover, .sub-btn.active {
-            background: #1b4324;
-            color: #ffffff;
-        }
-
-        .sub-tab-content {
-            display: none;
-            padding: 15px;
-            background: #fafdfa;
-            border: 1px solid #eaf2eb;
-            border-radius: 6px;
-        }
-
-        .sub-tab-content.active {
-            display: block;
-        }
-
-        /* TYPOGRAPHIE ET LISTES */
-        h2 {
-            font-size: 18px;
-            color: #1b4324;
-            border-bottom: 2px solid #1b4324;
-            padding-bottom: 6px;
-            margin-bottom: 15px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .text-center {
-            text-align: center;
-        }
-
-        h3 {
+        header p {
             font-size: 16px;
-            color: #2e693b;
-            margin: 15px 0 8px 0;
+            color: #4a6b51;
+            margin-top: 5px;
+            font-style: italic;
         }
 
-        p {
-            font-size: 14px;
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-card {
+            background-color: #f7faf8;
+            border: 1px solid #d4e3d6;
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            width: 100%;
+            height: 240px;
+            background-color: #e2e2e2;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 20px;
             color: #1b4324;
-            margin-bottom: 12px;
-            text-align: justify;
-            font-family: 'Arial', sans-serif;
-            line-height: 1.5;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
 
-        ul {
-            list-style: none;
-            padding-left: 0;
-            font-family: 'Arial', sans-serif;
+        .card-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #2c3e30;
             margin-bottom: 15px;
         }
 
-        ul li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: #1b4324;
+        .french-description {
+            font-style: italic;
+            color: #4a6b51;
+            border-top: 1px dashed #d4e3d6;
+            padding-top: 10px;
+            margin-top: auto;
         }
 
-        ul li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #1b4324;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        /* IMAGES STYLES */
-        .section-img {
-            width: 100%;
-            max-height: 350px;
-            object-fit: cover;
-            border-radius: 6px;
-            border: 1px solid #1b4324;
-            margin-top: 10px;
-        }
-
-        /* CARD CONTACT & WHATSAPP */
-        .contact-card {
-            background: #f0f7f1;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #1b4324;
-            margin-top: 15px;
-        }
-
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background-color: #25D366;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: 'Arial', sans-serif;
-            font-size: 14px;
-            margin: 8px 8px 8px 0;
-            transition: background 0.3s;
-        }
-
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-        }
-
-        .email-link {
-            color: #1b4324;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .email-link:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            .page-container { padding: 15px; }
-            .college-title { font-size: 16px; }
-            .grad-cap-icon { width: 2cm; height: 2cm; }
-            .nav-menu { flex-direction: column; text-align: center; }
-            .sub-nav { flex-direction: column; }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eaf2eb;
+            font-size: 13px;
+            color: #6c8a72;
         }
     </style>
 </head>
 <body>
 
     <div class="page-container">
-        <!-- HEADER -->
         <header>
-            <div class="title-wrapper">
-                <svg class="grad-cap-icon" viewBox="0 0 24 24"><path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3ZM5 13.18V17.18C5 19.4 8.13 21 12 21C15.87 21 19 19.4 19 17.18V13.18L12 17L5 13.18Z"/></svg>
-                <h1 class="college-title">PI & JU ANGLO-SAXON INTERNATIONAL COLLEGE</h1>
-                <svg class="grad-cap-icon" viewBox="0 0 24 24"><path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3ZM5 13.18V17.18C5 19.4 8.13 21 12 21C15.87 21 19 19.4 19 17.18V13.18L12 17L5 13.18Z"/></svg>
-            </div>
-            <div class="motto-container">
-                <p class="motto-primary">Discipline • Hardwork • Progress</p>
-                <p class="motto-secondary">College Of Astuteness</p>
-            </div>
+            <h1>PI & JU Anglo-Saxon International College</h1>
+            <p>Excellence, Discipline & Achievement</p>
         </header>
 
-        <!-- MENU DE NAVIGATION PRINCIPAL -->
-        <nav>
-            <ul class="nav-menu">
-                <li class="nav-item active"><a class="nav-link" onclick="openTab('home', this)">Home</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="openTab('education', this)">Education</a></li>
-                <li class="nav-item"><a class="nav-link" onclick="openTab('contact', this)">Contact</a></li>
-            </ul>
-        </nav>
-
-        <!-- ONGLET : HOME -->
-        <main id="home" class="tab-content active">
-            <section>
-                <h2 class="text-center">Welcome to Our Institution</h2>
-                <p>Our college offers a stimulating and nurturing learning environment that fosters the academic and personal growth of every student. Through educational excellence and a wide array of learning activities, we prepare tomorrow’s citizens to successfully meet every challenge.</p>
-            </section>
-
-            <section>
-                <h2 class="text-center">Overview</h2>
-                <p><strong>PI & JU Anglo-Saxon International College</strong> is a strictly Anglo-Saxon private secondary institution equipped with full boarding facilities, committed to academic excellence, moral integrity, and leadership development. Located in Mbiteng, Yaoundé (Cameroon), the college provides an authentic, high-standard English-educational environment.</p>
-            </section>
-        </main>
-
-        <!-- ONGLET : EDUCATION -->
-        <main id="education" class="tab-content">
-            <h2 class="text-center">Education</h2>
+        <main class="gallery-grid">
             
-            <!-- SOUS-ONGLETS EDUCATION -->
-            <div class="sub-nav">
-                <button class="sub-btn active" onclick="openSubTab('study', this)">Study at PI & JU College</button>
-                <button class="sub-btn" onclick="openSubTab('student-life', this)">Student Life</button>
-            </div>
-
-            <!-- 1. STUDY AT PI & JU COLLEGE -->
-            <div id="study" class="sub-tab-content active">
-                <h3 class="text-center">Anglo-Saxon Curriculum & Courses Dispensed</h3>
-                <p>Our college delivers a pure Anglo-Saxon academic curriculum designed to prepare students for official GCE Ordinary Level (O-Level) and Advanced Level (A-Level) examinations.</p>
-                
-                <h3 class="text-center">Lower Secondary (Form 1 to Form 5)</h3>
-                <p>Comprehensive foundation courses across general subjects:</p>
-                <ul>
-                    <li><strong>Languages:</strong> English Language.</li>
-                    <li><strong>Sciences & ICT:</strong> Mathematics, Physics, Chemistry, Biology, Computer Science.</li>
-                    <li><strong>Humanities & Commercials:</strong> History, Geography, Economics, Citizenship Education, Commerce, Principles of Accounts.</li>
-                </ul>
-
-                <h3 class="text-center">High School (Lower Sixth & Upper Sixth)</h3>
-                <p>Specialized fields tailored for university entrance and academic excellence:</p>
-                <ul>
-                    <li><strong>Science Stream:</strong> Pure Mathematics, Further Mathematics, Physics, Chemistry, Biology, Computer Science.</li>
-                    <li><strong>Arts Stream:</strong> Literature in English, History, Geography, Economics, Philosophy.</li>
-                </ul>
-            </div>
-
-            <!-- 2. STUDENT LIFE -->
-            <div id="student-life" class="sub-tab-content">
-                <h3 class="text-center">Student Life Services</h3>
-                <p class="text-center">Select a category below to explore student services and campus life:</p>
-
-                <!-- BOUTONS STUDENT LIFE -->
-                <div class="sub-nav">
-                    <button class="sub-btn active" onclick="openStudentTab('grants', this)">Grants and financial assistance</button>
-                    <button class="sub-btn" onclick="openStudentTab('sports', this)">Sports and Cultural Activities</button>
-                    <button class="sub-btn" onclick="openStudentTab('associations', this)">Student associations</button>
-                    <button class="sub-btn" onclick="openStudentTab('workspaces', this)">Work Spaces</button>
-                    <button class="sub-btn" onclick="openStudentTab('cafeteria', this)">Cafeteria and Food Service</button>
-                    <button class="sub-btn" onclick="openStudentTab('housing', this)">Housing</button>
+            <!-- Card 1: Séance de cours -->
+            <div class="gallery-card">
+                <div class="image-container">
+                    <img src="Seance de cours.png" alt="Class Session - Séance de cours">
                 </div>
-
-                <!-- CONTENUS CLIQUABLES STUDENT LIFE -->
-                <div id="grants" class="student-sub-tab active">
-                    <h3>Grants and financial assistance</h3>
-                    <p>Financial assistance programs and academic excellence grants are available to support deserving students throughout their academic journey.</p>
-                </div>
-
-                <div id="sports" class="student-sub-tab" style="display:none;">
-                    <h3>Sports and Cultural Activities</h3>
-                    <p>Extracurricular programs including inter-school tournaments (football, basketball, volleyball) alongside drama, music, and debate clubs.</p>
-                    <img src="Excursion%20A.png" alt="Excursion A" class="section-img">
-                </div>
-
-                <div id="associations" class="student-sub-tab" style="display:none;">
-                    <h3>Student associations</h3>
-                    <p>Active student leadership programs, Student Council, Environmental Club, Red Cross Society, and Young Christian Association.</p>
-                </div>
-
-                <div id="workspaces" class="student-sub-tab" style="display:none;">
-                    <h3>Work Spaces</h3>
-                    <p>Modern quiet study halls, high-speed internet computer laboratories, and a rich library designed for research and daily prep.</p>
-                </div>
-
-                <div id="cafeteria" class="student-sub-tab" style="display:none;">
-                    <h3>Cafeteria and Food Service</h3>
-                    <p>Hygienic dining facilities offering healthy, balanced, and nutritious meals for both resident boarders and day-students.</p>
-                    <img src="Cafetaria.png" alt="Cafeteria and Food Service" class="section-img">
-                </div>
-
-                <div id="housing" class="student-sub-tab" style="display:none;">
-                    <h3>Housing</h3>
-                    <p>Secure and comfortable separate boarding dormitories for boys and girls, supervised 24/7 by dedicated resident housemasters.</p>
+                <div class="card-content">
+                    <h2 class="card-title">Interactive Classroom Learning</h2>
+                    <p class="card-description">
+                        Students engaged in an interactive academic session, fostering critical thinking, collaboration, and rigorous learning under expert guidance.
+                    </p>
+                    <p class="card-description french-description">
+                        Des élèves engagés dans une séance académique interactive, favorisant la réflexion critique, la collaboration et l'apprentissage rigoureux.
+                    </p>
                 </div>
             </div>
+
+            <!-- Card 2: Excursion A -->
+            <div class="gallery-card">
+                <div class="image-container">
+                    <img src="Excursion A.png" alt="Educational Excursion A">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Educational Field Trip</h2>
+                    <p class="card-description">
+                        Broadening horizons through outdoor educational trips, allowing students to connect classroom concepts with real-world applications.
+                    </p>
+                    <p class="card-description french-description">
+                        Élargir les horizons grâce à des sorties éducatives, permettant aux élèves d'associer la théorie à la pratique sur le terrain.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: Excursion -->
+            <div class="gallery-card">
+                <div class="image-container">
+                    <img src="Excursion.png" alt="Student Excursion">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Cultural & Historical Exploration</h2>
+                    <p class="card-description">
+                        Students exploring cultural and historical landmarks, building teamwork and discovering heritage beyond traditional learning environments.
+                    </p>
+                    <p class="card-description french-description">
+                        Découverte du patrimoine culturel et historique par nos élèves, renforçant l'esprit d'équipe hors du cadre scolaire classique.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 4: Cafeteria -->
+            <div class="gallery-card">
+                <div class="image-container">
+                    <img src="Cafetaria.png" alt="College Cafeteria - Cafétéria">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Campus Cafeteria & Dining</h2>
+                    <p class="card-description">
+                        A modern and hygienic space where students gather to enjoy balanced meals, socialize, and relax during school breaks.
+                    </p>
+                    <p class="card-description french-description">
+                        Un espace moderne et hygiénique où les élèves se retrouvent pour partager des repas équilibrés et se détendre.
+                    </p>
+                </div>
+            </div>
+
         </main>
 
-        <!-- ONGLET : CONTACT -->
-        <main id="contact" class="tab-content">
-            <h2 class="text-center">Contact Us</h2>
-            <p>Reach out directly to our administrative office. Click on the buttons below to start an instant conversation on WhatsApp or send an email.</p>
-
-            <div class="contact-card">
-                <h3>Email Address</h3>
-                <p>✉️ <a class="email-link" href="mailto:contact@piandjucollege.org">contact@piandjucollege.org</a></p>
-                
-                <h3 style="margin-top: 15px;">Direct WhatsApp Contacts</h3>
-                <p>Click below to open a chat directly:</p>
-                
-                <a href="https://wa.me/237677181569" target="_blank" class="whatsapp-btn">
-                    💬 Chat WhatsApp: +237 6 77 18 15 69
-                </a>
-                
-                <a href="https://wa.me/237620514405" target="_blank" class="whatsapp-btn">
-                    💬 Chat WhatsApp: +237 6 20 51 44 05
-                </a>
-
-                <h3 style="margin-top: 15px;">Location</h3>
-                <p>📍 Mbiteng / Yaoundé, Cameroon</p>
-            </div>
-        </main>
+        <footer>
+            &copy; PI & JU Anglo-Saxon International College. All Rights Reserved.
+        </footer>
     </div>
-
-    <!-- SCRIPT JAVASCRIPT DE NAVIGATION -->
-    <script>
-        function openTab(tabId, element) {
-            let contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
-
-            let items = document.querySelectorAll('.nav-item');
-            items.forEach(item => item.classList.remove('active'));
-
-            document.getElementById(tabId).classList.add('active');
-            element.parentElement.classList.add('active');
-        }
-
-        function openSubTab(subTabId, element) {
-            let subContents = document.querySelectorAll('#education .sub-tab-content');
-            subContents.forEach(content => content.classList.remove('active'));
-
-            let subBtns = document.querySelectorAll('#education .sub-nav .sub-btn');
-            subBtns.forEach(btn => btn.classList.remove('active'));
-
-            document.getElementById(subTabId).classList.add('active');
-            element.classList.add('active');
-        }
-
-        function openStudentTab(studentTabId, element) {
-            let studentTabs = document.querySelectorAll('.student-sub-tab');
-            studentTabs.forEach(tab => tab.style.display = 'none');
-
-            let studentBtns = document.querySelectorAll('#student-life .sub-btn');
-            studentBtns.forEach(btn => btn.classList.remove('active'));
-
-            document.getElementById(studentTabId).style.display = 'block';
-            element.classList.add('active');
-        }
-    </script>
 
 </body>
 </html>
